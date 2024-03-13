@@ -1,0 +1,104 @@
+.container{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    background-color: rgb(224, 228, 228);
+}
+.addBook{
+    justify-content: center;
+    border:1px solid rgb(201, 212, 212);
+    width:30%;
+    background-color: white;
+    border-radius: 15px;
+    
+}
+.addform{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.addBook>h1{
+    font-size: 35px;
+}
+.addLabel{
+    width:70%;
+    text-align: start;
+    margin:0px;
+    padding-top:5px;
+    font-weight: 600;
+}
+.addInput{
+    height: 30px;
+    width:70%;
+    margin:10px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+}
+.set{
+    width:90%;
+    display:flex;
+    border:none;
+    justify-content: center;
+}
+.set1{
+    display:flex;
+    flex-direction: column;
+    text-align: start;
+    width:35%;
+    margin-right:50px;
+}
+.set2{
+    display:flex;
+    flex-direction: column;
+    text-align: start;
+    width:35% 
+}
+.setLabel{
+    padding-top: 5px;
+    font-weight: 600;
+}
+.setInput{
+    border-radius: 5px;
+    height:30px;
+    margin:10px 0px;
+}
+.set2{
+    display:flex;
+    flex-direction: column;
+}
+.addButton{
+   border-radius: 10px;
+   margin:40px 0px;
+   width:70%;
+   height:50px;
+   border: 1px solid rgb(112, 52, 224);
+   background-color: rgb(48, 20, 100);
+   color: white;
+   font-size: 20px;
+}
+@media screen  and (max-width:768px){
+    .addBook{
+        width:80%;
+    }
+    .addBook>h1{
+        font-size: 22px;
+    }
+    .addLabel{
+        width:80%;
+    }
+    .addInput{
+        width:80%
+    }
+    .set1{
+        width:40%;
+    }
+    .addButton{
+        margin: 20px 0px;
+        width:80%;
+    }
+    
+}

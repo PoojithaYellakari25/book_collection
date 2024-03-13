@@ -1,0 +1,53 @@
+.popupOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popupContent{
+    background-color: white;
+    width:30%;
+    height:30%;
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.popupContent>input{
+    width:70%;
+    height:30px
+}
+.popupContent>h3{
+    margin:20px 0px;
+
+}
+.popupButtons{
+    margin-top: 30px;
+    text-align: right;
+}
+button {
+    margin: 10px;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(50, 51, 126);
+    padding:10px 10px;
+}
+@media screen and (max-width:768px){
+    .popupContent{
+        width:60%;
+        height:40%;
+    }
+    .popupContent>input{
+        width:90%;
+    }
+    .popupContent>h3{
+        width: 80%;
+    
+    }
+}

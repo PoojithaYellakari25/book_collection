@@ -1,0 +1,157 @@
+.body{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.right{
+    height:100%;
+    width:50%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.left{
+    width:50%;
+}
+.leftImage{
+    width:90%;
+    margin:40px 0px;
+}
+.rightImage{
+    width:25%;
+    border-radius: 50%;
+    margin-top: 40px;
+    height:170px;
+}
+.rightImage>h1{
+    margin-bottom: 10px;
+}
+.data{
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.dataLabel{
+    font-weight: 600;
+    font-size: 16px;
+    margin: 0px 0px 8px 0px;
+    width:50%;
+    text-align: start;
+}
+
+.dataBox{
+    margin:0px 0px 12px 0px;
+    height:50px;
+    border-radius: 5px;
+    border:1px solid #000000E6;
+    width:50%;
+    display: flex;
+    align-items: center;
+}
+.input{
+    padding:1px 2px;
+    border:none;
+    outline:none;
+    width:100%;
+}
+
+
+.password{
+    font-size: 16px;
+    font-weight: 600;
+    border:none;
+    background-color: white;
+    color:#0A66C2;
+}
+.signinbox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    width:50%;
+}
+.a{
+    font-size: 16px;
+    font-weight: 600;
+    width:100%;
+    text-align: start;
+    line-height: 1.25;
+    color:#8344CC;
+    margin:10px 0px;
+}
+
+.button{
+    height: min-content;
+    min-height: 48px;
+    width : 70%;
+    padding:12px 24px;
+    margin:30px 0px;
+    font-weight: 600;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    background-color: #0A66C2;
+    border-radius: 24px;
+    border: 1px solid white;
+}
+.login{
+    margin: 0px;
+    font-size: 20px;
+    font-weight: 200;
+    line-height:1.25;
+}
+
+@media screen and (max-width:786px) {
+    .left{
+        display: none;
+    }
+    .right{
+        width:100%;
+    }
+    .rightImage{
+        width:40%;
+        margin-top: 40px;
+        height:140px;
+    }
+    .right>h1{
+        font-size: 20px;
+        margin:20px 0px;
+    }
+    .dataLabel{
+        width:65%;
+        font-size: 14px;
+    }
+
+.dataBox{
+    height:35px;
+    width:65%;
+}
+
+
+.password{
+    margin:0px;
+    padding: 0px 10px;
+    font-size: 14px;
+}
+.signinbox{
+    width:65%;
+}
+.a{
+    font-size: 14px;
+}
+.button{
+    width : 70%;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    margin: 10px 0px 20px;
+}
+
+.login{
+    font-size: 16px;
+}
+}
+

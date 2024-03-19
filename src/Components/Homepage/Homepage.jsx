@@ -9,7 +9,7 @@ import logo from'../../Assets/logo.png';
 function Homepage() {
     const navigate=useNavigate();
     async function logout() { 
-      localStorage.removeItem('isLoggedIn');    
+      localStorage.removeItem('currentUser');    
         navigate('/login');
     }
   return (

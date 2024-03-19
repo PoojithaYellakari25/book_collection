@@ -1,19 +1,39 @@
 import { Add_Book, Update_Book,Delete_Book, Set_Progress,Search_By_Book,Search_By_Author,Search_By_Date,RESET_SEARCH } from './LibraryActions';
 
-const storedBooks = localStorage.getItem('books');
-const initialState = storedBooks && storedBooks !== 'undefined'
-  ? JSON.parse(storedBooks)
-  : [] ;
+const email=localStorage.getItem('currentUser');
+let users=JSON.parse(localStorage.getItem('users')||'[]');
+console.log(email);
+if (!Array.isArray(users)) {
+    users = [];
+}
+console.log(users);
+const verified=users.find(user=> user.email==email );
+console.log(verified);
+let initialState=[];
+if(verified && verified.books){
+    initialState=verified.books;
+}
 
 export const bookReducer = (state=initialState,action) => {
     switch(action.type){
         case Add_Book:
             const newBook = {
                 ...action.payload,
-                id: Date.now()
+                id: Date.now(),
             };
             const newBooksAfterAdd = [...state, newBook];
-            localStorage.setItem('books', JSON.stringify(newBooksAfterAdd));
+            const updatedUsers = users.map(user => {
+                if (user.email === email && user.books) {
+                        console.log(...user.books);
+                        console.log(newBook);
+                    return {
+                        ...user,
+                        books: [...user.books, newBook]
+                    };
+                }
+                return user;
+            });
+            localStorage.setItem('users', JSON.stringify(updatedUsers));
             return newBooksAfterAdd;
         case Update_Book:
             const { id, book } = action.payload;
@@ -27,7 +47,19 @@ export const bookReducer = (state=initialState,action) => {
                     }
                     return currentBook;
                 });
-                localStorage.setItem('books', JSON.stringify(updatedBooks));
+                const updatedUsers = users.map(user => {
+                    if (user.email === email && user.books && user.books.id===id) {
+                        console.log([...user]);
+                        console.log(...user.books);
+                        console.log(updatedBooks);
+                        return {
+                            ...user,
+                            books: [...user.books, updatedBooks]
+                        };
+                    }
+                    return user;
+                });
+                localStorage.setItem('users', JSON.stringify(updatedUsers));
                 return updatedBooks;
             }else{
                 const updatedBooks = state.books.map((currentBook) => {
@@ -39,7 +71,19 @@ export const bookReducer = (state=initialState,action) => {
                     }
                     return currentBook;
                 });
-                localStorage.setItem('books', JSON.stringify(updatedBooks));
+                const updatedUsers = users.map(user => {
+                    if (user.email === email && user.books && user.books.id===id) {
+                        console.log([...user]);
+                        console.log(...user.books);
+                        console.log(updatedBooks);
+                        return {
+                            ...user,
+                            books: [...user.books, updatedBooks]
+                        };
+                    }
+                    return user;
+                });
+                localStorage.setItem('users', JSON.stringify(updatedUsers));
                 return updatedBooks;
             }         
         case Delete_Book:

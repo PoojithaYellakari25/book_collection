@@ -11,8 +11,7 @@ import { useEffect} from 'react';
 function App() {
   const navigate=useNavigate();
   useEffect(()=>{
-    const email=localStorage.getItem('isLoggedIn');
-    console.log(email);
+    const email=localStorage.getItem('currentUser');
     if(email==null){
       navigate('/login');
       console.log('hi');

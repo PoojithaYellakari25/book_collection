@@ -51,17 +51,17 @@ function AddBook({dispatch}) {
     <div className={styles.addBook}>
             <h1>{state ? "Update Book" : "Add Your Book"}</h1>
             <form className={styles.addform} onSubmit={handleSubmit}>
-                <label for="name" className={styles.addLabel}>Book Name</label>
+                <label htmlFor="name" className={styles.addLabel}>Book Name</label>
                 <input type="text" ref={bookName} id="name" defaultValue={state?.book.name || ""} className={styles.addInput}></input>
-                <label for="author" className={styles.addLabel}>Author Name</label>
+                <label htmlFor="author" className={styles.addLabel}>Author Name</label>
                 <input type="text" ref={authorName} id="author" defaultValue={state?.book.author || ""} className={styles.addInput}></input>
                 <div className={styles.set}>
                     <div className={styles.set1}>
-                        <label for="date" className={styles.setLabel}>Published Date</label>
+                        <label htmlFor="date" className={styles.setLabel}>Published Date</label>
                         <input type="date" ref={publishedDate} id="date" defaultValue={state?.book.date || ""} className={styles.setInput}></input>
                     </div>
                     <div className={styles.set2}> 
-                        <label for="Pages" className={styles.setLabel}>Total Pages</label>
+                        <label htmlFor="Pages" className={styles.setLabel}>Total Pages</label>
                         <input type="number" ref={pages} id="Pages" defaultValue={state?.book.pages || ""} className={styles.setInput}></input>
                     </div>
                 </div>

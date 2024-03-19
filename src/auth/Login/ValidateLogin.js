@@ -2,12 +2,14 @@ export async function validateLogin(event,emailValue,passValue,navigate){
     event.preventDefault();
     const pass = passValue.current.value;
     const email= emailValue.current.value;
-    const verifiedmail = localStorage.getItem('userName');
-    console.log(verifiedmail);
-    const verifiedpass = localStorage.getItem('pass');
-    if(email===verifiedmail){
-        if(pass===verifiedpass){
-            localStorage.setItem('isLoggedIn',true);
+    let users=JSON.parse(localStorage.getItem('users')||'[]');
+    if (!Array.isArray(users)) {
+        users = [];
+    }
+    const verified=users.find(user=> user.email==email );
+    if(verified){
+        if(verified.pass===pass){
+            localStorage.setItem('currentUser',email);
             navigate('/homepage');
         }else{
             alert("Check and enter your password correctly. ")
